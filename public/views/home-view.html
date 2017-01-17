@@ -1,0 +1,31 @@
+<div class="container">
+    <table ng-show="vm.cervejas" class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th></th>
+                <th>{{resources.HOME_CERVEJA_NOME}}</th>
+                <th>{{resources.HOME_CERVEJA_ESTILO}}</th>
+                <th>{{resources.HOME_CERVEJA_OG}}</th>
+                <th>{{resources.HOME_CERVEJA_FG}}</th>
+                <th>{{resources.HOME_CERVEJA_ABV}}</th>
+                <th>{{resources.HOME_CERVEJA_IBU}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cerveja in vm.cervejas">
+                <td>
+                    <a href ng-click="vm.excluir(cerveja._id)"> <span class="glyphicon glyphicon-pencil"></span></a>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                    <span class="glyphicon glyphicon-signal"></span>
+                </td>
+                <td>{{cerveja.nome}}</td>
+                <td>{{cerveja.estilo}}</td>
+                <td>{{cerveja.og}}</td>
+                <td>{{cerveja.fg}}</td>
+                <td>{{cerveja.abv}}</td>
+                <td>{{cerveja.ibu}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

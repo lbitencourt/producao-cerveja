@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="producaoCerveja" data-ng-controller="mainController as vm">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{resources.APP_TITLE}}</title>
+        <link href="modulo.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href>{{resources.APP_TITLE}}</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a ui-sref="home">{{resources.APP_MENU_CERVEJA}}</a></li>
+                            <li><a ui-sref="novaCerveja">{{resources.APP_MENU_NOVA_CERVEJA}}</a></li>
+                            <li><a href>{{resources.APP_MENU_LOTE}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div ui-view></div>
+        </div>        
+        <script src="library/jquery/dist/jquery.min.js"> </script>
+        <script src="library/bootstrap/dist/js/bootstrap.min.js"> </script>
+        <script src="library/angular/angular.min.js"> </script>
+        <script src="library/angular-route/angular-route.min.js"> </script>
+        <script src="library/angular-ui-router/release/angular-ui-router.min.js"> </script>
+        <script src="js/app.js"> </script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/routes.js"></script>
+        
+    </body>
+</html>

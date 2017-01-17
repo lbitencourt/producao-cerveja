@@ -1,0 +1,28 @@
+{
+  "name": "producao-cerveja",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/lbitencourt/producao-cerveja",
+  "authors": [
+    "Leandro Bitencourt <bitcourt@gmail.com>"
+  ],
+  "description": "Controle de produção de cerveja",
+  "moduleType": [
+    "node"
+  ],
+  "license": "Apache-2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/library",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.6.1",
+    "angular-route": "~1.6.1",
+    "angular-ui-router": "ui-route#~0.3.2",
+    "bootstrap": "~3.3.7"
+  }
+}

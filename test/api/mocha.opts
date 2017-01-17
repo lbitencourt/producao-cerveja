@@ -1,0 +1,3 @@
+--require test/api/helpers.js
+--report spec
+--slow 500
