@@ -12,17 +12,17 @@ var sourcemaps = require('gulp-sourcemaps');
 var buildDir = 'bin/';
 
 var depsJS = ['public/library/jquery/dist/jquery.min.js',
-    'public/library/bootstrap/dist/js/bootstrap.min.js',
-    'public/library/pace/pace.min.js',
-    'public/library/angular/angular.min.js'];
+    'public/library/semantic/dist/semantic.min.js',
+    'public/library/angular/angular.min.js',
+    'public/library/angular-route/angular-route.min.js',
+    'public/library/angular-ui-router/release/angular-ui-router.min.js'];
 
 var appJs = ['public/js/app.js',
     'public/js/controllers.js',
     'public/js/services.js',
     'public/js/routes.js'];
 
-var devcss = ['public/library/bootstrap/dist/css/bootstrap.min.css',
-    'public/library/bootstrap/dist/css/bootstrap.min.css.map',
+var devcss = ['public/library/semantic/dist/semantic.min.css',
     'public/css/app.css'];
 
 
@@ -37,7 +37,7 @@ gulp.task('devDeps', function () {
 });
 
 gulp.task('icons', function () {
-    return gulp.src('public/library/bootstrap/dist/fonts/**.*')
+    return gulp.src('public/library/semantic/dist/themes/material/**.*')
         .pipe(gulp.dest('./public/fonts'));
 });
 

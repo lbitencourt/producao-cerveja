@@ -23,6 +23,6 @@
     "angular": "~1.6.1",
     "angular-route": "~1.6.1",
     "angular-ui-router": "ui-route#~0.3.2",
-    "bootstrap": "~3.3.7"
+    "semantic": "^2.2.7"
   }
 }

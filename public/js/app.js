@@ -15,10 +15,11 @@
 
             HOME_CERVEJA_NOME : 'Nome',
             HOME_CERVEJA_ESTILO : 'Estilo',
-            HOME_CERVEJA_OG: 'OG',
-            HOME_CERVEJA_FG: 'FG',
-            HOME_CERVEJA_ABV: 'ABV',
-            HOME_CERVEJA_IBU: 'IBU',
+            HOME_CERVEJA_APAGAR: 'Apagar?',
+            HOME_CERVEJA_REGISTRAR_LOTE: 'Novo lote?',
+            HOME_CERVEJA_LOTES: 'Lotes',
+            NOVA_CERVEJA_INCLUIR: 'Salvar',
+            HOME_TABELA_CERVEJA_TITULO: 'Minhas cervejas',
         
             NOVA_CERVEJA_NOME_LABEL: 'Nome',
             NOVA_CERVEJA_NOME_PLACEHOLDER : 'Qual o nome da sua cerveja?',
