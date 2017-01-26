@@ -1,19 +1,7 @@
-<div>
-    <form role="form" class="ui form">
-        <div class="inline fields">
-            <div class="field">
-                <input type="text" name="nome" ng-model="vm.cerveja.nome" placeholder="{{resources.NOVA_CERVEJA_NOME_PLACEHOLDER}}" required>
-            </div>
-            <div class="field"> 
-                <input type="text" name="estilo" ng-model="vm.cerveja.estilo" placeholder="{{resources.NOVA_CERVEJA_ESTILO_PLACEHOLDER}}" required>
-            </div>
-            <button class="ui button" ng-click="vm.salvar(vm.cerveja)">{{resources.NOVA_CERVEJA_INCLUIR}}</button>
-        </div>
-    </form>
-</div>
+<a ui-sref="novaCerveja" class="btn">Cerveja</a>
 
 <div class="ui four cards" >
-    <div class="card" ng-repeat="cerveja in vm.cervejas | orderBy : 'nome'">
+    <div class="card" ng-repeat="cerveja in vm.cervejas | orderBy: 'nome'">
         <div class="content">
             <div class="header"> <a href="#">{{cerveja.nome}}</a></div>
             <div class="meta">{{cerveja.estilo}}</div> 

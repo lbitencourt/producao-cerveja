@@ -1,11 +1,11 @@
-<form role="form" class="nova-cerveja" ng-submit="vm.salvar()">
-    <div class="form-group">
-        <label for="nome" class="control-label">{{resources.NOVA_CERVEJA_NOME_LABEL}}</label>
-        <input name="nome" type="text" class="form-control input-lg" ng-model="vm.model.nome" placeholder="{{resources.NOVA_CERVEJA_NOME_PLACEHOLDER}}">
+<form role="form" class="ui form nova-cerveja" ng-submit="vm.salvar()">
+    <div class="field">
+        <label for="nome">{{resources.NOVA_CERVEJA_NOME_LABEL}}</label>
+        <input name="nome" type="text" ng-model="vm.model.nome" placeholder="{{resources.NOVA_CERVEJA_NOME_PLACEHOLDER}}">
     </div>
     <div class="form-group">
-        <label for="estilo" class="control-label">{{resources.NOVA_CERVEJA_ESTILO_LABEL}}</label>
-        <input name="estilo" type="text" class="form-control input-lg" ng-model="vm.model.estilo" placeholder="{{resources.NOVA_CERVEJA_ESTILO_PLACEHOLDER}}">
+        <label for="estilo">{{resources.NOVA_CERVEJA_ESTILO_LABEL}}</label>
+        <input name="estilo" type="text" ng-model="vm.model.estilo" placeholder="{{resources.NOVA_CERVEJA_ESTILO_PLACEHOLDER}}">
     </div>
-    <button class="btn btn-info btn-block btn-lg">{{resources.NOVA_CERVEJA_SALVAR}}</button>
+    <button class="ui button">{{resources.NOVA_CERVEJA_SALVAR}}</button>
 </form>

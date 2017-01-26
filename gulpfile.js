@@ -6,10 +6,11 @@ var concat = require('gulp-concat');
 var ngdocs = require('gulp-ngdocs');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var htmlReplace = require('gulp-html-replace');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 
-var buildDir = 'bin/';
+var buildDir = 'bulid/';
 
 var depsJS = ['public/library/jquery/dist/jquery.min.js',
     'public/library/semantic/dist/semantic.min.js',
@@ -25,12 +26,11 @@ var appJs = ['public/js/app.js',
 var devcss = ['public/library/semantic/dist/semantic.min.css',
     'public/css/app.css'];
 
-
 /** tasks **/
 gulp.task('devDeps', function () {
     var depsjs = gulp.src(depsJS);
     return depsjs
-        .pipe(concat('modulos.js'))
+        .pipe(concat('modulos.min.js'))
         .pipe(sourcemaps.init({ loadMaps: true }))
         //.pipe(uglify())
         .pipe(gulp.dest('public'));
@@ -44,7 +44,7 @@ gulp.task('icons', function () {
 gulp.task('devApps', function () {
     var depsjs = gulp.src(appJs);
     return depsjs
-        .pipe(concat('angular.js'))
+        .pipe(concat('angular.min.js'))
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(uglify())
         .pipe(gulp.dest('public'));
@@ -59,9 +59,21 @@ gulp.task('devCss', function () {
         .pipe(gulp.dest('public'));
 });
 
+gulp.task('replaceJs', function () {
+    var depsjs = gulp.src('public/index.html');
+    return depsjs
+        .pipe(htmlReplace({ 'js': ['js/angular.min.js', 'js/modulos.min.js'] }))
+        .pipe(gulp.dest(buildDir));
+});
+
+
 /** initialize **/
 gulp.task('default', function (callback) {	//'devDeps','devCss'
     runSequence('devCss', 'devDeps', 'devApps', 'icons', callback);
+});
+
+gulp.task('build', function (callback) {
+    runSequence('devCss', 'devDeps', 'devApps', 'icons', 'replaceJs', callback);
 });
 
 /** watch **/

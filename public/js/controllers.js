@@ -1,8 +1,8 @@
 (function (angular) {
-    'use strict';
+    'use strict'; 
 
-    function mainController() {
-
+    function mainController($rootScope, resourcesFactory) {
+        $rootScope.resources = resourcesFactory.resources;
     }
 
     function homeController(cervejaService) {
@@ -14,45 +14,32 @@
             });
         }
 
-        function removeCervejaTabela(id) {
-            vm.cervejas = vm.cervejas.filter(function (cerveja) {
-                return id !== cerveja._id;
-            });
-        }
-
         atualizaTabelaCerveja();
-
-        vm.excluir = function (id) {
-            cervejaService.delete(id).then(function (result) {
-                if (204 === result.status) {
-                    removeCervejaTabela(id);
-                } else {
-
-                }
-            });
-        };
-
-        vm.salvar = function (cerveja) {
-            cervejaService.post(cerveja).then(function (result) {
-                if (201 === result.status) {
-                    vm.cervejas.push(result.data);
-                    delete vm.cerveja;
-                }
-            });
-        }
     }
 
-    function novaCervejaController(cervejaService) {
+    function novaCervejaController($state, cervejaService) {
         var vm = this;
-        vm.salvar = function () {
-            cervejaService.post(vm.model).then(function (result) {
 
-            });
+        vm.salvar = function () {
+            cervejaService.post(vm.model)
+                .then(function (res) {
+                    if (HTTP_STATUS_CREATED === res.status) {
+                        $state.go('home');
+                    }
+                }).catch(function (res) {
+                    if (HTTP_STATUS_CONFLICT === res.status) {
+                        console.log('Leandro Bitencourt');
+                    } else {
+                        console.log(res);
+                        $state.go('error500');
+                    }
+                });
         };
     }
 
+    mainController.$inject = ['$rootScope', 'resourcesFactory'];
     homeController.$inject = ['cervejaService'];
-    novaCervejaController.$inject = ['cervejaService'];
+    novaCervejaController.$inject = ['$state', 'cervejaService'];
 
     angular.module('producaoCerveja')
         .controller('mainController', mainController)
