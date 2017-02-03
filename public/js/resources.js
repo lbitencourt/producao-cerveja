@@ -1,5 +1,6 @@
 (function (angular) {
     'use strict';
+    
     var resources = {
         APP_TITLE: 'Produção',
         APP_MENU_CERVEJA: 'Minhas cervejas',
@@ -18,6 +19,14 @@
         NOVA_CERVEJA_NOME_PLACEHOLDER: 'Qual o nome da sua cerveja?',
         NOVA_CERVEJA_ESTILO_LABEL: 'Estilo',
         NOVA_CERVEJA_ESTILO_PLACEHOLDER: 'Qual o estilo?',
+        NOVA_CERVEJA_OG_LABEL: 'OG',
+        NOVA_CERVEJA_OG_PLACEHOLDER: 'Ex. 1050',
+        NOVA_CERVEJA_FG_LABEL: 'FG',
+        NOVA_CERVEJA_FG_PLACEHOLDER: 'Ex. 1010',
+        NOVA_CERVEJA_ABV_LABEL: 'ABV',
+        NOVA_CERVEJA_ABV_PLACEHOLDER: 'Ex. 5.2',
+        NOVA_CERVEJA_IBU_LABEL: 'IBU',
+        NOVA_CERVEJA_IBU_PLACEHOLDER: 'Ex. 45',
         NOVA_CERVEJA_SALVAR: 'Salvar'
     };
 

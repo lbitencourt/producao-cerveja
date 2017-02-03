@@ -11,4 +11,4 @@ global.app = app;
 global.request = supertest(app);
 global.expect = chai.expect;
 
-var Cerveja = require('../../app/modules/cervejas/cervejas-schemas');
+var Cerveja = require('../../app/schemas');

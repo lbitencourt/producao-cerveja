@@ -5,10 +5,10 @@ var CervejaSchema = new mongoose.Schema({
     nome: { type: String, required: true, trim: true },
     estilo: { type: String, required: true, trim: true },    
     
-    og: { type: Number },
-    fg: { type: Number },
-    abv: { type: Number },
-    ibu: { type: Number },
+    og: { type: Number, required: true },
+    fg: { type: Number, required: true },
+    abv: { type: Number, required: true },
+    ibu: { type: Number, required: true },
 
     lotes: [{
         numero: { type: Number, required: true },

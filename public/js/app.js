@@ -7,7 +7,7 @@ var HTTP_STATUS_CONFLICT = 409;
     var app = angular.module('producaoCerveja', ['ui.router']);
 
     app.config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/cervejas');
     });
 
     app.run(['$rootScope', function ($rootScope) {}]);

@@ -1,11 +1,32 @@
-<form role="form" class="ui form nova-cerveja" ng-submit="vm.salvar()">
-    <div class="field">
-        <label for="nome">{{resources.NOVA_CERVEJA_NOME_LABEL}}</label>
-        <input name="nome" type="text" ng-model="vm.model.nome" placeholder="{{resources.NOVA_CERVEJA_NOME_PLACEHOLDER}}">
+<form name="novaCerveja" role="form" class="ui form nova-cerveja" ng-submit="novaCerveja.$valid && vm.salvar()" novalidate>
+    <div class="two fields">
+        <div class="field" ng-class="{'error': novaCerveja.$submitted && novaCerveja.nome.$invalid}">
+            <label for="nome">{{resources.NOVA_CERVEJA_NOME_LABEL}}</label>
+            <input name="nome" type="text" ng-model="vm.model.nome" placeholder="{{resources.NOVA_CERVEJA_NOME_PLACEHOLDER}}" required>
+        </div>
+        <div class="field" ng-class="{'error': novaCerveja.$submitted && novaCerveja.estilo.$invalid}">
+            <label for="estilo">{{resources.NOVA_CERVEJA_ESTILO_LABEL}}</label>
+            <input name="estilo" type="text" ng-model="vm.model.estilo" placeholder="{{resources.NOVA_CERVEJA_ESTILO_PLACEHOLDER}}" required>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="estilo">{{resources.NOVA_CERVEJA_ESTILO_LABEL}}</label>
-        <input name="estilo" type="text" ng-model="vm.model.estilo" placeholder="{{resources.NOVA_CERVEJA_ESTILO_PLACEHOLDER}}">
+    <div class="four fields">
+        <div class="field" ng-class="{'error': novaCerveja.$submitted && novaCerveja.og.$invalid}">
+            <label for="og">{{resources.NOVA_CERVEJA_OG_LABEL}}</label>
+            <input name="og" type="text" ng-model="vm.model.og" placeholder="{{resources.NOVA_CERVEJA_OG_PLACEHOLDER}}" required>
+        </div>
+        <div class="field" ng-class="{'error': novaCerveja.$submitted && novaCerveja.fg.$invalid}">
+            <label for="fg">{{resources.NOVA_CERVEJA_FG_LABEL}}</label>
+            <input name="fg" type="text" ng-model="vm.model.fg" placeholder="{{resources.NOVA_CERVEJA_FG_PLACEHOLDER}}" required>
+        </div>
+        <div class="field" ng-class="{'error': novaCerveja.$submitted && novaCerveja.abv.$invalid}">
+            <label for="abv">{{resources.NOVA_CERVEJA_ABV_LABEL}}</label>
+            <input name="abv" type="text" ng-model="vm.model.abv" placeholder="{{resources.NOVA_CERVEJA_ABV_PLACEHOLDER}}" required>
+        </div>
+        <div class="field" ng-class="{'error': novaCerveja.$submitted && novaCerveja.ibu.$invalid}">
+            <label for="ibu">{{resources.NOVA_CERVEJA_IBU_LABEL}}</label>
+            <input name="ibu" type="text" ng-model="vm.model.ibu" placeholder="{{resources.NOVA_CERVEJA_IBU_PLACEHOLDER}}" required>
+        </div>        
     </div>
     <button class="ui button">{{resources.NOVA_CERVEJA_SALVAR}}</button>
 </form>
+

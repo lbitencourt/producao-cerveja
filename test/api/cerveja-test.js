@@ -1,7 +1,8 @@
 'use strict';
 
 var payload = {
-    nome: 'Brown Porter'
+    nome: 'Brown Porter',
+    estile: 'Brown Porter'
 };
 
 describe('cervejas', function () {

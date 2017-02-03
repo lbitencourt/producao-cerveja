@@ -6,8 +6,47 @@ var httpStatus = require('./resources').httpStatus;
 var controller = {
     postCerveja: postCerveja,
     getCervejas: getCervejas,
-    removeCerveja: removeCerveja
+    removeCerveja: removeCerveja,
+    getByIdCerveja: getByIdCerveja,
+
+    getLotes: getLotes
 };
+
+function getLotes(req, res) {
+    var id = req.params.id;
+    var projection = { lotes: 1 };
+
+    Cerveja.findById(id, projection, function (err, data) {
+        if (err) {
+            console.error(err);
+            return res.status(httpStatus.INTERNAL_ERROR).end();
+        }
+        
+        if (!data.lotes) {
+            return res.status(httpStatus.NO_CONTENT).end();
+        }
+
+        res.status(httpStatus.OK).json(data.lotes);
+    });
+}
+
+function getByIdCerveja(req, res) {
+    var id = req.params.id;
+    var projection = { nome: 1, estilo: 1 };
+
+    Cerveja.findById(id, projection, function (err, cerveja) {
+        if (err) {
+            console.error(err);
+            return res.status(httpStatus.INTERNAL_ERROR).end();
+        }
+
+        if (!cerveja) {
+            return res.status(httpStatus.NOT_FOUND).end();
+        }
+
+        res.status(httpStatus.OK).json(cerveja);
+    });
+}
 
 function getCervejas(req, res) {
     var projection = { nome: 1, estilo: 1 };
@@ -68,6 +107,9 @@ function removeCerveja(req, res) {
             res.status(httpStatus.NO_CONTENT).send();
         });
     });
+
+
 }
+
 
 module.exports = controller;
