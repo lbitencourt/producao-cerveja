@@ -9,14 +9,14 @@
     };
 
     var novaCervejaState = {
-        url: '/cervejas/nova',
+        url: '/nova-cerveja',
         templateUrl: 'views/nova-cerveja-view.html',
         controller: 'novaCervejaController',
         controllerAs: 'vm'
     };
 
     var detalheCervejaState = {
-        url: '/cerveja/{id}',
+        url: '/cervejas/{id}',
         templateUrl: 'views/detalhe-cerveja-view.html',
         controller: 'detalheCervejaController',
         controllerAs: 'vm'
