@@ -2,24 +2,28 @@
     'use strict';
 
     var homeState = {
+        url: '/',
+        templateUrl: 'views/home-view.html'
+    };
+
+    var cervejasState = {
+        name: 'cervejas',
         url: '/cervejas',
-        templateUrl: 'views/home-view.html',
-        controller: 'homeController',
-        controllerAs: 'vm'
+        controller: 'cervejasController',
+        controllerAs: 'vm',
+        templateUrl: 'views/cervejas-view.html'
     };
 
-    var novaCervejaState = {
+    var producoesState = {
+        name: 'producoes',
+        url: '/producoes',
+        templateUrl: 'views/producoes-view.html'
+    };
+
+    var novaCerveja = { 
+        name: 'novaCerveja',
         url: '/nova-cerveja',
-        templateUrl: 'views/nova-cerveja-view.html',
-        controller: 'novaCervejaController',
-        controllerAs: 'vm'
-    };
-
-    var detalheCervejaState = {
-        url: '/cervejas/{id}',
-        templateUrl: 'views/detalhe-cerveja-view.html',
-        controller: 'detalheCervejaController',
-        controllerAs: 'vm'
+        templateUrl: 'views/nova-cerveja-view.html'
     };
 
     var error403State = {
@@ -42,8 +46,9 @@
             .state('error403', error403State)
             .state('error404', error404State)
             .state('error500', error500State)
-            .state('home', homeState)
-            .state('detalheCerveja', detalheCervejaState)
-            .state('novaCerveja', novaCervejaState);
+            .state('home', homeState) 
+            .state(cervejasState)
+            .state(novaCerveja)
+            .state(producoesState);
     }]);
 })(angular);

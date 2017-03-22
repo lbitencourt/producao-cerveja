@@ -7,41 +7,38 @@
 
     function homeController(cervejaService) {
         var vm = this;
+    }
 
-        function atualizaTabelaCerveja() {
-            cervejaService.get().then(function (result) {
-                vm.cervejas = result.data;
+    function cervejasController($state, cervejaService) {
+        var vm = this;
+
+        function atualizaTabela() {
+            cervejaService.get().then(function (res) {
+                vm.cervejas = res.data;
             });
         }
 
-        atualizaTabelaCerveja();
-
-        vm.excluir = function (id) {
-            cervejaService.remove(id).then(function (result) {
-                atualizaTabelaCerveja();
-            });
-        };
-    }
-
-    function novaCervejaController($state, cervejaService) {
-        var vm = this;
+        atualizaTabela();
 
         vm.salvar = function () {
             cervejaService.post(vm.model)
                 .then(function (res) {
                     if (HTTP_STATUS_CREATED === res.status) {
-                        $state.go('home');
-                    } else {
-
+                        vm.model = {};
+                        atualizaTabela();
                     }
                 }).catch(function (res) {
                     if (HTTP_STATUS_CONFLICT === res.status) {
-
                     } else {
-                        console.log(res);
                         $state.go('error500');
                     }
                 });
+        };
+
+        vm.excluir = function (id) {
+            cervejaService.remove(id).then(function (res) {
+                atualizaTabela();
+            });
         };
     }
 
@@ -52,17 +49,18 @@
         function getByIdThen(res) {
             vm.cerveja = res.data;
 
-            loteService.get(id).then(function(res){
+            loteService.get(id).then(function (res) {
                 vm.lotes = res.data;
             });
         }
-        cervejaService.getById(id)
-            .then(getByIdThen);
+
+        cervejaService.getById(id).then(getByIdThen);
     }
 
     mainController.$inject = ['$rootScope', 'resourcesFactory'];
     homeController.$inject = ['cervejaService'];
-    novaCervejaController.$inject = ['$state', 'cervejaService'];
+    cervejasController.$inject = ['$state', 'cervejaService'];
+
     detalheCervejaController.$inject = [
         '$stateParams',
         'cervejaService',
@@ -72,5 +70,6 @@
         .controller('mainController', mainController)
         .controller('homeController', homeController)
         .controller('detalheCervejaController', detalheCervejaController)
-        .controller('novaCervejaController', novaCervejaController);
+        .controller('cervejasController', cervejasController);
+
 })(angular);

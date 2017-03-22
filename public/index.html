@@ -11,9 +11,25 @@
         <!-- endbuild -->
     </head>
     <body>
-        <div class="ui container">
-            <div ui-view></div>
-        </div>        
+        <div  class="ui container">
+            <div class="ui vertical menu"  >
+                <div class="item">
+                    <div class="header">Produções</div>
+                    <div class="menu">
+                        <div class="item"><a ui-sref="producoes">{{resources.APP_MENU_PRODUCOES}}</a></div>
+                        <div class="item">Registrar</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header">Cervejas</div>
+                    <div class="menu">
+                        <div class="item"><a ui-sref="cervejas">{{resources.APP_MENU_CERVEJAS}}</a></div>
+                        <div class="item"><a ui-sref="novaCerveja">{{resources.APP_MENU_CERVEJAS}}</a></div>
+                    </div>
+                </div>
+            </div> 
+            <div ui-view  ></div>            
+        </div>
         <!-- build:js -->
         <script src="library/jquery/dist/jquery.min.js"> </script>
         <script src="library/semantic/dist/semantic.min.js"> </script>

@@ -34,5 +34,3 @@ process.on('SIGINT', function () {
 });
 
 module.exports = db; 
-
-mongoose.model('Cerveja', require('./schemas'));
