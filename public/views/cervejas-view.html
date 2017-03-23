@@ -1,18 +1,17 @@
-<h3 ng-hide="vm.cervejas.length"><a href ui-sref="novaCerveja">{{resources.CERVEJA_SEM_CRIAS}}</a></h3>
-
-<div class="ui cards four">
+<h3>{{resources.CERVEJA_LISTA_TITULO}}</h3>
+<div class="ui cards four wide">
     <div class="ui card" ng-repeat="cerveja in vm.cervejas | orderBy: 'nome'">
         <div class="content">
-            <div class="header"><a href>{{cerveja.nome}}</a></div>
+            <div class="header"><a href ui-sref="alteraCerveja">{{cerveja.nome}}</a></div>
         </div>
         <div class="content">
             <h4 class="ui sub header">{{cerveja.estilo}}</h4>
             <div class="content">
-                <span class="left ">{{resources.CERVEJA_OG_LABEL}}: {{cerveja.og | number: 3}}</span>            
+                <span class="left">{{resources.CERVEJA_OG_LABEL}}: {{cerveja.og | number: 3}}</span>            
                 <span class="right floated">{{resources.CERVEJA_FG_LABEL}}: {{cerveja.fg | number: 3}}</span>
             </div>
             <div class="content">
-                <span class="left ">{{resources.CERVEJA_IBU_LABEL}}: {{cerveja.ibu | number: 0}}</span>            
+                <span class="left">{{resources.CERVEJA_IBU_LABEL}}: {{cerveja.ibu | number: 0}}</span>            
                 <span class="right floated">{{resources.CERVEJA_ABV_LABEL}}: {{cerveja.abv | number: 1}}</span>
             </div>
         </div>  
@@ -22,5 +21,3 @@
         </div>
     </div>
 </div>
-
-

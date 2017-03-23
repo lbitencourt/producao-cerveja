@@ -4,6 +4,7 @@ module.exports = situacao;
 function situacao(app) {
 	return {
 		type: String,
-		enum: ['Fermentação', 'Maturação', 'Carbonatação', 'Terminado']
+		enum: ['Fermentação', 'Maturação', 'Carbonatação', 'Terminado'],
+		default: 'Fermentação'
 	};
 }

@@ -18,6 +18,7 @@
             update: function (id, payload) {
                 return $http.put('/api/cervejas/' + id, payload);
             },
+            
             getById: function (id) {
                 return $http.get('/api/cervejas/' + id);
             }

@@ -7,6 +7,7 @@
         APP_MENU_REGISTRO_PRODUCAO: 'Oba! Produziu?',
         APP_MENU_CERVEJA: 'Suas crias (Cervejas)?',
         APP_MENU_NOVA_CERVEJA: 'Estilo novo, isso?',
+        APP_MENU_FERMENTACAO: 'O que está em produção?',
 
         CERVEJA_NOME_LABEL: 'Nome',
         CERVEJA_NOME_PLACEHOLDER: 'Qual o nome da sua cerveja?',
@@ -20,10 +21,13 @@
         CERVEJA_ABV_PLACEHOLDER: 'Ex. 5.2',
         CERVEJA_IBU_LABEL: 'IBU',
         CERVEJA_IBU_PLACEHOLDER: 'Ex. 45',
-        CERVEJA_SALVAR: 'Salvar',
-        CERVEJA_SEM_CRIAS: 'Nenhum cria encontrada... cadastrar agora?',
+        CERVEJA_SALVAR: 'Salvar', 
         CERVEJA_EXCLUIR: 'Excluir?',
         CERVEJA_PRODUCOES: 'Produções',
+        CERVEJA_LISTA_TITULO : 'Suas cervejas',
+        CERVEJA_NOVA_TITULO: 'Informe os dados da sua cerveja',
+
+        CERVEJA_ALTERA_TITULO: 'Mudou alguma coisa?',
 
         PRODUCAO_REGISTRO_TITULO: 'Qual a sua cria de hoje?'
     };

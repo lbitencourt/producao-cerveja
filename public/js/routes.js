@@ -22,6 +22,13 @@
         templateUrl: 'views/nova-cerveja-view.html'
     };
 
+    var alteraCerveja = {
+        name: 'alteraCerveja',
+        url: '/altera-cerveja',
+        controller: 'alteraCervejaController',
+        controllerAs: 'vm',
+        templateUrl: 'views/altera-cerveja-view.html'
+    };
 
     var producoesState = {
         name: 'producoes',
@@ -59,6 +66,7 @@
             .state('home', homeState)
             .state(cervejasState)
             .state(novaCerveja)
+            .state(alteraCerveja)
             .state(producoesState)
             .state(registroProducaoState);
     }]);

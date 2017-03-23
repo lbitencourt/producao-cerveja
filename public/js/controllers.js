@@ -18,6 +18,14 @@
         };
     }
 
+    function alteraCervejaController($state, cervejaService) {
+        var vm = this;
+
+        vm.salvar = function () {
+            console.log(vm.model);
+        };
+    }
+
     function cervejasController($state, cervejaService) {
         var vm = this;
 
@@ -44,5 +52,6 @@
         .controller('mainController', mainController)
         .controller('homeController', homeController)
         .controller('novaCervejaController', novaCervejaController)
+        .controller('alteraCervejaController', alteraCervejaController)
         .controller('cervejasController', cervejasController);
 })(angular);
