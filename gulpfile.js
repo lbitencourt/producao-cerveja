@@ -93,7 +93,6 @@ gulp.task('default', function (callback) {	//'front.devDeps','front.devCss'
     runSequence('front.devCss', 'front.devDeps', 'front.devApps', 'front.icons', callback);
 });
 
-
 gulp.task('build', function (callback) {
     runSequence('front.devCss', 'front.devDeps', 'front.devApps', 'front.icons', 'replaceHtml', 'copyHtml', callback);
 });

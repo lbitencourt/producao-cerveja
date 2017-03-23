@@ -14,17 +14,27 @@
         templateUrl: 'views/cervejas-view.html'
     };
 
+    var novaCerveja = {
+        name: 'novaCerveja',
+        url: '/nova-cerveja',
+        controller: 'novaCervejaController',
+        controllerAs: 'vm',
+        templateUrl: 'views/nova-cerveja-view.html'
+    };
+
+
     var producoesState = {
         name: 'producoes',
         url: '/producoes',
         templateUrl: 'views/producoes-view.html'
     };
 
-    var novaCerveja = { 
-        name: 'novaCerveja',
-        url: '/nova-cerveja',
-        templateUrl: 'views/nova-cerveja-view.html'
+    var registroProducaoState = {
+        name: 'registroProducao',
+        url: '/registro-de-producao',
+        templateUrl: 'views/registro-producao-view.html'
     };
+
 
     var error403State = {
         url: '/errors/403',
@@ -46,9 +56,10 @@
             .state('error403', error403State)
             .state('error404', error404State)
             .state('error500', error500State)
-            .state('home', homeState) 
+            .state('home', homeState)
             .state(cervejasState)
             .state(novaCerveja)
-            .state(producoesState);
+            .state(producoesState)
+            .state(registroProducaoState);
     }]);
 })(angular);

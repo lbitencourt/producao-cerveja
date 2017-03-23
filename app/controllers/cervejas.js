@@ -40,6 +40,10 @@ function controller(app) {
                 return res.status(httpStatus.INTERNAL_ERROR).end();
             }
 
+            if (!cervejas.length) {
+                return res.status(httpStatus.NO_CONTENT).send();
+            }
+
             res.status(httpStatus.OK).json(cervejas);
         });
     }

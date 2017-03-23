@@ -1,29 +1,26 @@
-<a href ui-sref="novaCerveja">Qual a próxima cerveja?</a>
+<h3 ng-hide="vm.cervejas.length"><a href ui-sref="novaCerveja">{{resources.CERVEJA_SEM_CRIAS}}</a></h3>
 
-<table class="ui compact celled  table" ng-show="vm.cervejas.length">
-    <thead>
-        <tr>
-            <th>{{resources.CERVEJA_NOME_LABEL}}</th>
-            <th>{{resources.CERVEJA_ESTILO_LABEL}}</th>
-            <th>{{resources.CERVEJA_OG_LABEL}}</th>
-            <th>{{resources.CERVEJA_FG_LABEL}}</th>
-            <th>{{resources.CERVEJA_IBU_LABEL}}</th>
-            <th>{{resources.CERVEJA_ABV_LABEL}}</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="cerveja in vm.cervejas | orderBy: 'nome'">
-            <td>{{cerveja.nome}}</td>
-            <td>{{cerveja.estilo}}</td>
-            <td>{{cerveja.og | number: 3}}</td>
-            <td>{{cerveja.fg | number: 3}}</td>
-            <td>{{cerveja.ibu | number: 0}}</td>
-            <td>{{cerveja.abv | number: 1}}</td>
-            <td class="collapsing">
-                <a href ng-click="vm.editar(cerveja)" class="mini ui ">Editar</a> 
-                <a href ng-click="vm.excluir(cerveja._id)" class="mini ui  negative">Apagar</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="ui cards four">
+    <div class="ui card" ng-repeat="cerveja in vm.cervejas | orderBy: 'nome'">
+        <div class="content">
+            <div class="header"><a href>{{cerveja.nome}}</a></div>
+        </div>
+        <div class="content">
+            <h4 class="ui sub header">{{cerveja.estilo}}</h4>
+            <div class="content">
+                <span class="left ">{{resources.CERVEJA_OG_LABEL}}: {{cerveja.og | number: 3}}</span>            
+                <span class="right floated">{{resources.CERVEJA_FG_LABEL}}: {{cerveja.fg | number: 3}}</span>
+            </div>
+            <div class="content">
+                <span class="left ">{{resources.CERVEJA_IBU_LABEL}}: {{cerveja.ibu | number: 0}}</span>            
+                <span class="right floated">{{resources.CERVEJA_ABV_LABEL}}: {{cerveja.abv | number: 1}}</span>
+            </div>
+        </div>  
+        <div class="extra content">
+            <button class="ui mini button">{{resources.CERVEJA_PRODUCOES}}</button>
+            <button class="ui mini button" ng-click="vm.excluir(cerveja._id)">{{resources.CERVEJA_EXCLUIR}}</button>
+        </div>
+    </div>
+</div>
+
+
