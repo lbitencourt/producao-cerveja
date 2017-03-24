@@ -2,7 +2,7 @@
 <div class="ui cards four wide">
     <div class="ui card" ng-repeat="cerveja in vm.cervejas | orderBy: 'nome'">
         <div class="content">
-            <div class="header"><a href ui-sref="alteraCerveja">{{cerveja.nome}}</a></div>
+            <div class="header"><a href ui-sref="alteraCerveja({cerveja:cerveja})">{{cerveja.nome}}</a></div>
         </div>
         <div class="content">
             <h4 class="ui sub header">{{cerveja.estilo}}</h4>
@@ -11,12 +11,15 @@
                 <span class="right floated">{{resources.CERVEJA_FG_LABEL}}: {{cerveja.fg | number: 3}}</span>
             </div>
             <div class="content">
+                <span class="left">{{resources.CERVEJA_SG_LABEL}}: {{cerveja.sg | number: 3}}</span>            
+            </div>
+            <div class="content">
                 <span class="left">{{resources.CERVEJA_IBU_LABEL}}: {{cerveja.ibu | number: 0}}</span>            
                 <span class="right floated">{{resources.CERVEJA_ABV_LABEL}}: {{cerveja.abv | number: 1}}</span>
             </div>
         </div>  
         <div class="extra content">
-            <button class="ui mini button">{{resources.CERVEJA_PRODUCOES}}</button>
+            <a href class="ui mini button" ui-sref="registroProducao({cerveja: cerveja})" >{{resources.PRODUCAO_REGISTRO}}</a>
             <button class="ui mini button" ng-click="vm.excluir(cerveja._id)">{{resources.CERVEJA_EXCLUIR}}</button>
         </div>
     </div>

@@ -31,7 +31,7 @@ function controller(app) {
     }
 
     function getCervejas(req, res) {
-        var projection = {};
+        var projection = {__v: 0};
         var query = {};
 
         Cerveja.find(query, projection).sort('nome').exec(function (err, cervejas) {

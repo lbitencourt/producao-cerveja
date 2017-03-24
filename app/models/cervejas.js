@@ -10,6 +10,7 @@ function cerveja(app) {
 		nome: fields.nome,
 		estilo: fields.estilo,
 		og: fields.og,
+		sg: fields.sg,
 		fg: fields.fg,
 		ibu: fields.ibu,
 		abv: fields.abv

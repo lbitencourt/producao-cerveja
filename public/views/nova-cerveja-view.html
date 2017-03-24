@@ -1,6 +1,6 @@
 <h3>{{resources.CERVEJA_NOVA_TITULO}}</h3>
 <form name="novaCerveja" role="form" class="ui form" ng-submit="novaCerveja.$valid && vm.salvar()" novalidate>
-    <div class="two fields">
+    <div class="fields">
         <div class="field">
             <label for="nome">{{resources.CERVEJA_NOME_LABEL}}</label>
             <input name="nome"  type="text" ng-model="vm.model.nome" placeholder="{{resources.CERVEJA_NOME_PLACEHOLDER}}" required>
@@ -10,10 +10,14 @@
             <input name="estilo" type="text" ng-model="vm.model.estilo" placeholder="{{resources.CERVEJA_ESTILO_PLACEHOLDER}}" required>
         </div>
     </div>
-    <div class="four fields">
+    <div class="fields">
         <div class="field">
             <label for="og">{{resources.CERVEJA_OG_LABEL}}</label>
             <input name="og" type="text" ng-model="vm.model.og" placeholder="{{resources.CERVEJA_OG_PLACEHOLDER}}" required>
+        </div>
+        <div class="field">
+            <label for="sg">{{resources.CERVEJA_SG_LABEL}}</label>
+            <input name="sg" type="text" ng-model="vm.model.sg" placeholder="{{resources.CERVEJA_SG_PLACEHOLDER}}" required>
         </div>
         <div class="field">
             <label for="fg">{{resources.CERVEJA_FG_LABEL}}</label>

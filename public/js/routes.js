@@ -25,6 +25,9 @@
     var alteraCerveja = {
         name: 'alteraCerveja',
         url: '/altera-cerveja',
+        params: {
+            cerveja: null
+        },
         controller: 'alteraCervejaController',
         controllerAs: 'vm',
         templateUrl: 'views/altera-cerveja-view.html'
@@ -39,6 +42,11 @@
     var registroProducaoState = {
         name: 'registroProducao',
         url: '/registro-de-producao',
+        params: {
+            cerveja: null
+        },
+        controller: 'registroProducaoController',
+        controllerAs: 'vm',
         templateUrl: 'views/registro-producao-view.html'
     };
 
@@ -60,9 +68,9 @@
 
     angular.module('producaoCerveja').config(['$stateProvider', function ($stateProvider) {
         $stateProvider
-            .state('error403', error403State)
-            .state('error404', error404State)
-            .state('error500', error500State)
+            .state('403', error403State)
+            .state('404', error404State)
+            .state('500', error500State)
             .state('home', homeState)
             .state(cervejasState)
             .state(novaCerveja)

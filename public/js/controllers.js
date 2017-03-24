@@ -8,6 +8,17 @@
     function homeController() {
     }
 
+    function registroProducaoController($rootScope, $interpolate, $state, $stateParams) {
+        var vm = this;
+        var resources = $rootScope.resources;
+
+        vm.cerveja = $stateParams.cerveja;
+
+        if (!vm.cerveja) {
+            return $state.go('404');
+        }
+    }
+
     function novaCervejaController($state, cervejaService) {
         var vm = this;
 
@@ -18,11 +29,19 @@
         };
     }
 
-    function alteraCervejaController($state, cervejaService) {
+    function alteraCervejaController($state, $stateParams, cervejaService) {
         var vm = this;
 
+        vm.model = $stateParams.cerveja;
+
+        if (!vm.model) {
+            return $state.go('404');
+        }
+
         vm.salvar = function () {
-            console.log(vm.model);
+            cervejaService.update(vm.model._id, vm.model).then(function (res) {
+                $state.go('cervejas');
+            });
         };
     }
 
@@ -44,13 +63,10 @@
         };
     }
 
-    mainController.$inject = ['$rootScope', 'resourcesFactory'];
-    homeController.$inject = [];
-    cervejasController.$inject = ['$state', 'cervejaService'];
-
     angular.module('producaoCerveja')
         .controller('mainController', mainController)
         .controller('homeController', homeController)
+        .controller('registroProducaoController', registroProducaoController)
         .controller('novaCervejaController', novaCervejaController)
         .controller('alteraCervejaController', alteraCervejaController)
         .controller('cervejasController', cervejasController);
